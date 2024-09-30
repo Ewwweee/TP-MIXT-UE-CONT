@@ -12,6 +12,7 @@ type_defs = load_schema_from_path('movie.graphql')
 query = QueryType()
 movie = ObjectType('Movie')
 query.set_field('movie_with_id', r.movie_with_id)
+query.set_field('movies_per_ratings',r.movie_per_ratings)
 actor = ObjectType('Actor')
 movie.set_field('actors', r.resolve_actors_in_movie)
 

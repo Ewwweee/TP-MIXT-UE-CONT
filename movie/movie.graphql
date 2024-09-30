@@ -3,7 +3,7 @@ type Query {
   all_movie(): [Movie]
   movie_with_title(_title: String!): Movie
   movie_per_ratings():[Movie]
-  directors():[Movie]
+  directors():String
 
 }
 

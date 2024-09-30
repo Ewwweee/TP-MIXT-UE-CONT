@@ -27,4 +27,9 @@ def resolve_actors_in_movie(movie, info):
         result = [actor for actor in actors['actors'] if movie['id'] in actor['films']]
         return result
     
-    
+def movie_per_ratings(_,info):
+    with open('{}/data/movies.json'.format("."),"r") as file:
+        movies_list = json.load(file)["movies"]
+        # We sort the list of movies per their rate
+        sorted_list = sorted(movies_list,key=lambda x : x["rate"])
+        return sorted_list
